@@ -1,0 +1,24 @@
+﻿@model CheeseMVCPersistent.ViewModels.ViewMenuViewModel
+
+<h1>@ViewBag.Title</h1>
+
+@if (Model.Items.Count == 0)
+{
+    <p>No menu items yet!</p>
+}
+
+<p><a asp-controller="Menu" asp-action="AddItem" asp-route-id=@Model.Menu.ID>
+        <button type="button">Add Item</button>
+    </a>
+</p>
+
+
+<table class="table">    
+    @foreach (var cheeseMenu in Model.Items)
+    {
+        <tr>   
+            <td>@cheeseMenu.Cheese.Name</td>    
+        </tr>
+    }
+</table>
+

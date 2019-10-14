@@ -1,0 +1,42 @@
+﻿@model CheeseMVCPersistent.ViewModels.AddEditCheeseViewModel
+
+<h1>Edit Cheese @Model.Name</h1> @*@ViewBag.cheese.Name (@ViewBag.cheese.CheeseId)</h1>*@
+
+<form method="post">
+    @*<div class="form-group">
+        <label>Name: <input class="form-control" type="text" name="name" value="@ViewBag.cheese.Name"/></label>
+        <p style="color: red">@ViewBag.error</p>
+    </div>
+    <div class="form-group">
+        <label>Description: <input class="form-control" type="text" name="description" value="@ViewBag.cheese.Description"/></label>
+    </div>
+    
+    <input type="hidden" value="@ViewBag.cheese.CheeseId" name="id" />*@
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description"/>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID"></label>
+        <select class="form-control" asp-for="CategoryID" asp-items="Model.Categories"></select>
+        <span asp-validation-for="CategoryID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Rating"></label>
+        <input class="form-control" asp-for="Rating"/>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+
+    <input type="submit" value="Edit Cheese" />
+</form>
+
