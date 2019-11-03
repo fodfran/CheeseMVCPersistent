@@ -10,7 +10,7 @@ namespace CheeseMVCPersistent.ViewModels
     {
         [Required]
         [MinLength(3)]
-        [MaxLength(10)]
+        [MaxLength(20)]
         [Display(Name = "Cheese Name")]
         public string Name { get; set; }
 
