@@ -26,9 +26,8 @@ namespace CheeseMVCPersistent.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433; Database=CheeseDb2;User=SA; Password=<SHINee5252008>");
-            //optionsBuilder.UseSqlServer("Server=localhost:8889; Database=CheeseMVC; User=CheeseMVC; Password=cheese");
-
+            //optionsBuilder.UseSqlServer("Server=localhost,1433; Database=CheeseDb2;User=SA; Password=<SHINee5252008>");
+            optionsBuilder.UseSqlServer("Server=tcp:cheesemvc.database.windows.net,1433;Initial Catalog=cheesemvc;Persist Security Info=False;User ID=fodfran;Password=SHINee2008;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         }
     }
 }
